@@ -2,6 +2,7 @@ import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
+import icon from "astro-icon";
 import expressiveCode from "astro-expressive-code";
 import mdx from "@astrojs/mdx";
 import rehypeSlug from "rehype-slug";
@@ -45,6 +46,7 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     expressiveCode(astroExpressiveCodeOptions),
+    icon(),
     mdx(),
     react(),
   ],
