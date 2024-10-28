@@ -53,7 +53,7 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-  site: "https://astrozinc.exylons.com",
+  site: "https://github.com/simonastrecanska/simonastrecanska.github.io.git",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {
