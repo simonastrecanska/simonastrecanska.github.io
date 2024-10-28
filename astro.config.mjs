@@ -53,7 +53,7 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-  site: "https://simonastrecanska.github.io.git",
+  site: "https://simonastrecanska.github.io",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {
