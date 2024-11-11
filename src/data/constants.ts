@@ -6,7 +6,7 @@ export const defaultMeta = {
     "An Astro blogging template made by @exylons using Astro, Tailwind, and MDX",
   ogImage: {
     src: "/static/banner.png",
-    alt: "Astro Zinc with Astro Logo",
+    alt: "Astro Zinc with Astro Logos",
   },
 };
 
