@@ -1,34 +1,34 @@
----
-import Link from "@components/Link.astro";
-import { Icon } from "astro-icon/components";
-import { author, defaultMeta, navigation } from "@data/constants";
-import "@fontsource-variable/inter";
-import Callout from "@components/MDX/Callout.astro";
+<script>
+  import Link from "@components/Link.astro";
+  import { Icon } from "astro-icon/components";
+  import { author, defaultMeta, navigation } from "@data/constants";
+  import "@fontsource-variable/inter";
+  import Callout from "@components/MDX/Callout.astro";
 
-const twitter = "exylods"; // Twitter username, even though it's privated.
+  const twitter = "exylods"; // Twitter username, even though it's privated.
 
-interface Props {
-  title?: string;
-  description?: string;
-  ogImage?: {
-    src: string;
-    alt: string;
-  };
-  pubDate?: Date;
-  wide?: boolean;
-}
+  interface Props {
+    title?: string;
+    description?: string;
+    ogImage?: {
+      src: string;
+      alt: string;
+    };
+    pubDate?: Date;
+    wide?: boolean;
+  }
 
-const {
-  title = defaultMeta.title,
-  description = defaultMeta.description,
-  ogImage = defaultMeta.ogImage,
-  pubDate,
-  wide = false,
-} = Astro.props;
+  const {
+    title = defaultMeta.title,
+    description = defaultMeta.description,
+    ogImage = defaultMeta.ogImage,
+    pubDate,
+    wide = false,
+  } = Astro.props;
 
-const ogImageURL = new URL(ogImage.src, Astro.site).href;
-const canonicalURL = new URL(Astro.url).href;
----
+  const ogImageURL = new URL(ogImage.src, Astro.site).href;
+  const canonicalURL = new URL(Astro.url).href;
+</script>
 
 <!doctype html>
 <html lang="en-US" class="dark:[color-scheme:dark] scroll-smooth">
@@ -58,14 +58,9 @@ const canonicalURL = new URL(Astro.url).href;
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
     <meta name="author" content={author} />
-    {
-      pubDate && (
-        <meta
-          property="article:published_time"
-          content={pubDate.toISOString()}
-        />
-      )
-    }
+    {pubDate && (
+      <meta property="article:published_time" content={pubDate.toISOString()} />
+    )}
   </head>
   <body
     class="dark:bg-zinc-950 bg-zinc-50 antialiased selection:bg-zinc-700 selection:text-zinc-100 dark:selection:bg-zinc-500 dark:selection:text-white pt-10 2xl:text-lg"
@@ -83,13 +78,11 @@ const canonicalURL = new URL(Astro.url).href;
       }}
     >
       <ul class="flex justify-evenly space-x-6">
-        {
-          navigation.map((item) => (
-            <li>
-              <Link {...item} />
-            </li>
-          ))
-        }
+        {navigation.map((item) => (
+          <li>
+            <Link {...item} />
+          </li>
+        ))}
       </ul>
       <button
         id="dark-mode-toggle"
@@ -110,7 +103,7 @@ const canonicalURL = new URL(Astro.url).href;
     >
       <noscript>
         <Callout type="error" title="NOTICE">
-          Some features on this website won't work without JavaScript such as
+          Some features on this website won't work without JavaScript, such as
           theme toggle, search bar, and copy article.
         </Callout>
       </noscript>
