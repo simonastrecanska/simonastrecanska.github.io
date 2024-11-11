@@ -1,4 +1,4 @@
-<script>
+---
 import Layout from "@layouts/Layout.astro";
 import Pagination from "@components/Pagination.astro";
 import { Image } from "astro:assets";
@@ -46,7 +46,7 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
   month: "long",
   day: "numeric",
 });
-</script>
+---
 
 <Layout
   title={title}
